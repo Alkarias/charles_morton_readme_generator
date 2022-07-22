@@ -53,12 +53,51 @@ const questions = [
     }
 ];
 
+function createStructure(res) {
+    const codeBlock = '```';
+    return `
+    # ${res.title}
+    ## Description
+    ${res.description}
+    ## Table of Contents
+    * [Installation](#installation)
+    * [Usage](#usage)
+    * [License](#license)
+    * [Contributing](#contributing)
+    * [Tests](#tests)
+    * [Questions](#questions)
+    ## Installation
+    To install dependencies, run this command:
+    ${codeBlock}
+    ${res.install}
+    ${codeBlock}
+    ## Usage
+    ${res.usage}
+    ## License
+    This project is licensed with ${res.licenses}.
+    ## Contributing
+    ${res.contribute}
+    ## Tests
+    This command can be run to perform tests:
+    ${codeBlock}
+    ${res.test}
+    ${codeBlock}
+    ## Questions
+    If you have any questions you can contact my through [email](${res.email}).`
+}
+
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(filename, data, err => [
+        err ? console.error(err) : console.log(`Created ${fileName}`)
+    ]);
+}
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions).then()
+    inquirer.prompt(questions).then(answers => {
+        writeToFile('README.md', createStructure(answers));
+    });
 }
 
 // Function call to initialize app
