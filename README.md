@@ -1,6 +1,6 @@
-# README Generator
+# README generator
 ## Description
-Dynamically generates a README.md file from given user input
+This application dynamically generates a README.md file based on user input
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
@@ -14,15 +14,15 @@ To install dependencies, run this command:
 npm i
 ```
 ## Usage
-run the command ```node index.js``` in the integrated terminal to start this project
+Run this program by entering one of the following commands into the integrated terminal: '''node index.js''' or '''npm start'''
 ## License
 This project is licensed with MIT.
 ## Contributing
-Contact me through one of the links at the bottom of this document
+Please contact me using the information at the bottom of this document before making any changes to the codebase
 ## Tests
 This command can be run to perform tests:
 ```
 npm test
 ```
 ## Questions
-If you have any questions you can contact my through [email](alkarias29@gmail.com).
+If you have any questions you can contact my through [email](Alkarias29@gmail.com).
