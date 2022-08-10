@@ -55,40 +55,39 @@ const questions = [
 
 function createStructure(res) {
     const codeBlock = '```';
-    return `
-    # ${res.title}
-    ## Description
-    ${res.description}
-    ## Table of Contents
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [License](#license)
-    * [Contributing](#contributing)
-    * [Tests](#tests)
-    * [Questions](#questions)
-    ## Installation
-    To install dependencies, run this command:
-    ${codeBlock}
-    ${res.install}
-    ${codeBlock}
-    ## Usage
-    ${res.usage}
-    ## License
-    This project is licensed with ${res.licenses}.
-    ## Contributing
-    ${res.contribute}
-    ## Tests
-    This command can be run to perform tests:
-    ${codeBlock}
-    ${res.test}
-    ${codeBlock}
-    ## Questions
-    If you have any questions you can contact my through [email](${res.email}).`
+    return `# ${res.title}
+## Description
+${res.description}
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
+## Installation
+To install dependencies, run this command:
+${codeBlock}
+${res.install}
+${codeBlock}
+## Usage
+${res.usage}
+## License
+This project is licensed with ${res.licenses}.
+## Contributing
+${res.contribute}
+## Tests
+This command can be run to perform tests:
+${codeBlock}
+${res.test}
+${codeBlock}
+## Questions
+If you have any questions you can contact my through [email](${res.email}).`
 }
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(filename, data, err => [
+    fs.writeFile(fileName, data, err => [
         err ? console.error(err) : console.log(`Created ${fileName}`)
     ]);
 }
